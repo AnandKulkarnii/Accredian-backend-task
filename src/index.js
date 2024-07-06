@@ -9,6 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/referrals", referralRoutes);
+app.get("/", (req, res) => {
+  res.send("Welcome to the Referrals API");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
